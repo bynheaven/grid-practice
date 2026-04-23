@@ -14,7 +14,27 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
     gap: 1rem;
+}
+
+.box:nth-child(1) {
+    grid-area: header;
+}
+
+.box:nth-child(2) {
+    grid-area: sidebar;
+}
+
+.box:nth-child(3) {
+    grid-area: main;
+}
+
+.box:nth-child(4) {
+    grid-area: footer;
 }
 
 .box {
@@ -24,8 +44,4 @@ body {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-}
-
-.box:first-child {
-    grid-row: 1 / 3;
 }
